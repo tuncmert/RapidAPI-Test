@@ -1,0 +1,29 @@
+﻿@model ResultExchangeModel
+@{
+    Layout = null;
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<div class="container">
+    <label>Date: @Model.base_currency_date</label>
+    <br />
+    <table class="table table-bordered text-center">
+        <thead>
+            <tr>
+                <th>Currency</th>
+                <th>Price</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.exchange_rates)
+            {
+                <tr>
+                    <td>@item.currency</td>
+                    <td>@item.exchange_rate_buy</td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,34 @@
+﻿@model List<ResultMovieModel>
+@{
+    Layout = null;
+}
+
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+
+<div class="container">
+    <br />
+    <table class="table table-bordered text-center">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Movie Name</th>
+                <th>Rating</th>
+                <th>Trailer</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.rank</td>
+                    <td>@item.title</td>
+                    <td>@item.rating</td>
+                    <td><a href="@item.trailer" class="btn btn-dark">Go to Trailer</a> </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</div>
